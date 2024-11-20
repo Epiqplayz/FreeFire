@@ -1,0 +1,278 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #092047;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  transition: background-color 0.5s ease;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+  background-color: #ffffff;
+}
+
+body.light-mode .container {
+  background: linear-gradient(135deg, #00f3ff, #ff00ff);
+  box-shadow: 0 0 20px #00f, 0 0 40px #00f3ff, 0 0 60px #ff00ff;
+}
+
+/* Neon Container */
+.container {
+  text-align: center;
+  padding: 30px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff007f, #00f3ff, #ff00ff);
+  box-shadow: 0 0 20px #0ff, 0 0 40px #ff007f, 0 0 60px #ff00ff;
+  color: #fff;
+  max-width: 90%;
+  margin: auto;
+}
+
+/* Rainbow Text Effect */
+.css-rainbow-text {
+  background: linear-gradient(90deg, #f00, #ff2b00, #f50, #ff8000, #fa0, #ffd500, #ff0, #d4ff00, #af0, #80ff00, #5f0, #2bff00, #0f0, #00ff2b, #0f5, #00ff80, #0fa, #00ffd5, #0ff, #00d4ff, #0af, #007fff, #05f, #002bff, #00f, #2a00ff, #50f, #7f00ff, #a0f, #d400ff, #f0f, #ff00d4, #f0a, #ff0080, #f05, #ff002b, #f00);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 50px;
+  font-weight: bold;
+  display: inline-block;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Input Group */
+.form-group {
+  position: relative;
+  margin: 20px 0;
+}
+
+label {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  display: block;
+  text-align: left;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #333;
+  border: 2px solid #00ffff;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #ff00ff;
+  box-shadow: 0 0 10px #00ffff, 0 0 20px #ff007f, 0 0 30px #ff00ff;
+}
+
+/* Submit Button */
+button {
+  background-color: #ff00ff;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00f, 0 0 25px #ff00ff;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  box-shadow: 0 0 30px #ff0, 0 0 45px #0ff;
+  transform: scale(1.05);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align toggle button to the left */
+  margin-top: 20px;
+}
+
+.theme-label {
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  border-radius: 25px;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-icon {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background-color: #ff007f;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#theme-switch {
+  display: none; /* Hide the checkbox itself */
+}
+
+#theme-switch:checked + .theme-label {
+  background-color: #333;
+}
+
+#theme-switch:checked + .theme-label .toggle-icon {
+  transform: translateX(25px);
+}
+
+#theme-switch:checked + .theme-label .toggle-icon::before {
+  content: '🌞'; /* Sun icon */
+}
+
+#theme-switch:checked + .theme-label .toggle-icon::after {
+  content: '🪐🛸'; /* Planets */
+  font-size: 0.6em;
+  position: absolute;
+  left: -25px;
+}
+
+.toggle-icon::before {
+  content: '🌜'; /* Moon icon */
+  display: flex;
+}
+
+.toggle-icon::after {
+  content: '✨🌟'; /* Stars */
+  font-size: 0.6em;
+  position: absolute;
+  right: -25px;
+}
+
+/* Slide-In Animation */
+@keyframes slide-in {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-slow {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Applythe slide-in effect */
+.slide-in {
+  animation: slide-in-slow 2s ease forwards;
+}
+/* Glowing Button Animation Styles */
+.btn {
+  padding: 15px 40px;
+  border: none;
+  outline: none;
+  color: #FFF;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 5px;
+  background-color: #ff00ff; /* Consistent with your theme */
+  box-shadow: 0 0 15px #00f, 0 0 25px #ff00ff;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Edge Glow Effect */
+.btn::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #FF0000, #FF7300, #FFFB00, #48FF00,
+    #00FFD5, #002BFF, #FF00C8, #FF0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  filter: blur(8px);
+  animation: glowing 20s linear infinite;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Keyframes for edge glow animation */
+@keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
+}
+
+/* Hover effect for edge glow */
+.btn:hover::before {
+  opacity: 1;
+}
+
+.btn:hover {
+  box-shadow: 0 0 30px #ff0, 0 0 45px #0ff;
+  transform: scale(1.05);
+}
+/* Input Fields with Animated Gradient Border */
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #333;
+  border: 0.25em solid transparent; /* Transparent border to set up gradient border */
+  border-radius: 5px;
+  outline: none;
+  background-image: linear-gradient(#333, #333), linear-gradient(120deg, #f09 0%, #0ff 50%, #9f0 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  background-size: 200% 100%;
+  transition: background-position 0.8s ease-out, box-shadow 0.3s ease;
+}
+
+/* Hover and Focus: Maintain animated gradient border without any fallback effects */
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  background-position: 100% 0; /* Keeps the gradient animation visible */
+  border-color: transparent; /* Prevents purple border from appearing */
+  box-shadow: none; /* Removes any shadow or glow effect */
+  outline: none; /* Ensures no additional outline is applied */
+}

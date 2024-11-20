@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nawaf's Webpage</title>
+  <link rel="stylesheet" href="mx.css">
+  <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+</head>
+<body>
+  <div class="container slide-in" role="form" aria-labelledby="form-heading">
+    <h1 id="form-heading" class="css-rainbow-text">Enter the Gaming Arena</h1>
+
+    <!-- Updated form with login functionality -->
+    <form id="login-form">
+      <div class="form-group slide-in">
+        <label for="email" class="css-rainbow-text">Email</label>
+        <input id="email" type="email" required>
+      </div>
+
+      <div class="form-group slide-in">
+        <label for="password" class="css-rainbow-text">Password</label>
+        <input id="password" type="password" required>
+      </div>
+
+      <!-- Login Button -->
+      <button class="btn slide-in" type="submit">Login</button>
+    </form>
+
+    <div class="theme-toggle">
+      <input type="checkbox" id="theme-switch">
+      <label for="theme-switch" class="theme-label">
+        <div class="toggle-icon"></div>
+      </label>
+    </div>
+  </div>
+
+  <script type="module">
+    import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+    new fairyDustCursor();
+
+    // Theme Toggle
+    const themeSwitch = document.getElementById('theme-switch');
+    themeSwitch.addEventListener('change', () => {
+      document.body.classList.toggle('light-mode');
+    });
+
+    // Login Validation
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form from reloading the page
+
+      // Predefined email and password
+      const correctEmail = "nawaf@gmail.com";
+      const correctPassword = "nawaf";
+
+      // Get user inputs
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      // Validate credentials
+      if (email === correctEmail && password === correctPassword) {
+        // Redirect to another page
+        window.location.href = "file:///C:/Users/nawaf/OneDrive/Documents/aura.html";
+      } else {
+        // Show an error message
+        alert("Incorrect email or password. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
